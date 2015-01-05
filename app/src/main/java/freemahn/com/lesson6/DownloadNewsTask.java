@@ -13,6 +13,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
 /**
  * Created by Freemahn on 17.10.2014.
  */
@@ -39,16 +42,17 @@ public class DownloadNewsTask extends AsyncTask<String, Integer, ArrayList<Entry
 
     public ArrayList<Entry> loadFromXML(String urlString) throws IOException, XmlPullParserException {
         ArrayList<Entry> contentAsString = new ArrayList<Entry>();
-        InputStream is = null;
+        InputStream is;
 
 
         StackOverflowXmlParser parser = new StackOverflowXmlParser();
         //EchoMoscowParser parser = new EchoMoscowParser();
         is = getInpStream(urlString);
-        contentAsString = (ArrayList<Entry>) parser.parse(is);
+        //contentAsString = (ArrayList<Entry>) parser.parse(is);
+
+        contentAsString = MySAXParser.parse(is);
         if (is != null)
             is.close();
-
         return contentAsString;
 
     }

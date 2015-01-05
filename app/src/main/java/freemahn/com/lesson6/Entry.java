@@ -4,10 +4,14 @@ package freemahn.com.lesson6;
  * Created by Freemahn on 17.10.2014.
  */
 public class Entry {
-    public final String title;
-    public final String summary;
-    public final String link;
+    public String title;
+    public String summary;
+    public String link;
+
     //   public final String updated;
+    public Entry() {
+
+    }
 
     public Entry(String title, String summary, String link) {
         this.title = title;

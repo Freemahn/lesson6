@@ -22,7 +22,6 @@ public class MainActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Button refreshBtn = (Button) findViewById(R.id.refresh_btn);
 
     }
 
@@ -38,7 +37,6 @@ public class MainActivity extends ListActivity {
             e.printStackTrace();
         }
         ArrayList<String> toAdapter = new ArrayList<String>();
-        Log.d("END", "END");
         for (int i = 0; i < entries.size(); i++) {
             toAdapter.add(entries.get(i).title + "\n" + entries.get(i).link);
         }
