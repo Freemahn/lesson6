@@ -8,17 +8,34 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="freemahn.com.lesson6.MainActivity"
-            android:label="@string/app_name" >
+            android:name=".EntriesActivity"
+            android:label="@string/title_activity_entrieslist" >
+        </activity>
+        <activity
+            android:name="freemahn.com.lesson6.WebActivity"
+            android:label="@string/title_activity_entry" >
+        </activity>
+
+        <service
+            android:name=".EntriesIntentService"
+            android:exported="false" >
+        </service>
+
+        <provider
+            android:name=".EntryContentProvider"
+            android:authorities="freemahn.com.lesson6.entries"
+            android:enabled="true">
+        </provider>
+
+        <activity
+            android:name=".ChannelsActivity"
+            android:label="@string/title_activity_channels" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WebActivity">
-
-        </activity>
     </application>
+
 
 </manifest>

@@ -11,9 +11,11 @@ public class WebActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_web);
+        setContentView(R.layout.webView);
+        setTitle(getIntent().getStringExtra("title"));
         WebView wv = (WebView) findViewById(R.id.web_view);
-        wv.loadUrl(getIntent().getStringExtra("link"));
+        wv.getSettings().setDefaultTextEncodingName("utf-8");
+        wv.loadDataWithBaseURL(null, getIntent().getStringExtra("description"), "text/html", "en_US", null);
 
     }
 }

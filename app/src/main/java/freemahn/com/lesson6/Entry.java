@@ -5,24 +5,25 @@ package freemahn.com.lesson6;
  */
 public class Entry {
     public String title;
-    public String summary;
+    public String description;
     public String link;
 
-    //   public final String updated;
     public Entry() {
 
     }
 
-    public Entry(String title, String summary, String link) {
+    public Entry(String title, String description, String link) {
         this.title = title;
-        this.summary = summary;
+        this.description = description;
         this.link = link;
-        //this.updated = updated;
-
+    }
+    public Entry(String title, String link) {
+        this.title = title;
+        this.link = link;
     }
 
     @Override
     public String toString() {
-        return title + " " + "\n" + link + "\n" + summary;
+        return title + " " + "\n" + link + "\n" + description;
     }
 }
